@@ -14,21 +14,18 @@ class Markdown {
   }
 
   static pagesToMarkdown(pages) {
-    let data = `<!-- ${browser.i18n.getMessage(
-      'services_template_signature',
-      `<a href="${INSTALLATION_URL}">YiNote</a>`
-    )} -->\n\n`;
+    let data = ``;
 
     for (let page of pages) {
       const { meta, notes } = page;
-      data += `# [${meta.title}](${meta.url})\n\n`;
+      data += `- [${meta.title}](${meta.url})\n`;
 
       for (let note of notes) {
-        data += `## [${secondsToTime(note.timestamp)}](${buildAutoSeekUrl(
+        data += `    - [${secondsToTime(note.timestamp)}](${buildAutoSeekUrl(
           meta.url,
           note.timestamp
-        )})\n\n`;
-        data += note.content + '\n\n';
+        )}) `;
+        data += note.content + '\n';
       }
     }
 
