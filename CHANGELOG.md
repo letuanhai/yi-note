@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.1
+
+- Change markdown output structure.
+
+### Bug fixes
+
+- Fixes Drawer does not  close.
+
 ## 1.6.0
 
 - [782e805](https://github.com/shuowu/yi-note/commit/782e80572c0ee11b644859c4ae59ea06a8924654)
