@@ -18,14 +18,14 @@ class Markdown {
 
     for (let page of pages) {
       const { meta, notes } = page;
-      data += `- [${meta.title}](${meta.url})\n`;
+      data += `- [${meta.title}](${meta.url})`.trimEnd() + '\n';
 
       for (let note of notes) {
         data += `    - [${secondsToTime(note.timestamp)}](${buildAutoSeekUrl(
           meta.url,
           note.timestamp
         )}) `;
-        data += note.content + '\n';
+        data += note.content.trimEnd() + '\n';
       }
     }
 
